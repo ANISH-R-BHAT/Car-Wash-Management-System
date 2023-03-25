@@ -126,3 +126,49 @@ ul {
 .styled-table tbody tr:last-of-type {
     border-bottom: 2px solid #009879;
 }
+
+/* Style for the member details table */
+.styled-table {
+  width: 80%;
+  margin-left: 250px;
+  border-collapse: collapse;
+  background-color: #fff;
+  box-shadow: 0 0 10px #ccc;
+  font-size: 0.9rem;
+}
+
+/* Style for the table header */
+.styled-table th {
+  padding: 8px 12px;
+  text-align: left;
+  font-weight: bold;
+  background-color: #0066cc;
+  color: #fff;
+}
+
+/* Style for the table body */
+.styled-table td {
+  border: 1px solid #ddd;
+  padding: 6px 12px;
+  background-color: #fff;
+}
+
+/* Alternate row background color */
+.styled-table tbody tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+/* Hover style for table rows */
+.styled-table tbody tr:hover {
+  background-color: #ddd;
+}
+
+/* Style for the member details table header */
+h1 {
+  text-align: center;
+  margin-top: 50px;
+  font-size: 1.5rem;
+}
+
+
+
