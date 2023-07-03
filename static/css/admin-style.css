@@ -170,5 +170,24 @@ h1 {
   font-size: 1.5rem;
 }
 
+.delete-button {
+  background-color: #f44336; /* Red background */
+  border: none; /* No border */
+  color: white; /* White text */
+  padding: 10px 24px; /* Some padding */
+  text-align: center; /* Centered text */
+  text-decoration: none; /* No underline */
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s; /* 0.4 second transition */
+  cursor: pointer; /* Add a mouse pointer on hover */
+  border-radius: 5px; /* Rounded corners */
+}
 
+/* When the user hovers over the button, change the color to darken */
+.delete-button:hover {
+  background-color: #c13b2a;
+  color: white;
+}
 

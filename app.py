@@ -222,6 +222,24 @@ def employee_members_details(id):
         cursor.execute("SELECT * FROM membership WHERE id = %s", (id,))
         member = cursor.fetchone()
         return render_template("member_details.html", member=member)
+    else:
+        return '<h1>NOT AUTHORIZED!</h1>'
+
+
+@app.route('/employee/members/<int:id>/edit')
+def employee_member_edit(id):
+    pass
+
+
+@app.route('/employee/members/<int:id>/delete')
+def employee_delete_member(id):
+    if 'loggedin' in session:
+        cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
+        cursor.execute("DELETE FROM membership WHERE id = %s", (id,))
+        cursor.connection.commit()
+        return redirect(url_for('employee'))
+    else:
+        return '<h1>NOT AUTHORIZED!</h1>'
 
 
 if __name__ == '__main__':
