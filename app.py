@@ -182,6 +182,17 @@ def employee_reservations_detailed(id):
         return '<h1>NOT AUTHORIZED!</h1>'
 
 
+@app.route('/employee/reservations/<int:id>/delete')
+def employee_reservations_delete(id):
+    if 'loggedin' in session:
+        cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
+        cursor.execute("DELETE FROM reservations WHERE id = %s", (id,))
+        cursor.connection.commit()
+        return redirect(url_for('employee_reservations'))
+    else:
+        return '<h1>NOT AUTHORIZED!</h1>'
+
+
 @app.route('/employee/support_center')
 def employee_support_center():
     if 'loggedin' in session:
@@ -200,6 +211,17 @@ def employee_support_center_ticket_details(id):
         cursor.execute("SELECT * FROM contact WHERE id = %s", (id,))
         ticket = cursor.fetchone()
         return render_template('support_ticket.html', ticket=ticket)
+    else:
+        return '<h1>NOT AUTHORIZED!</h1>'
+
+
+@app.route('/employee/support_center/<int:id>/delete')
+def employee_support_center_ticket_delete(id):
+    if 'loggedin' in session:
+        cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
+        cursor.execute("DELETE FROM contact WHERE id = %s", (id,))
+        cursor.connection.commit()
+        return redirect(url_for('employee_support_center'))
     else:
         return '<h1>NOT AUTHORIZED!</h1>'
 

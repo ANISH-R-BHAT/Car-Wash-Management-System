@@ -13,6 +13,7 @@
         <th>Email</th>
         <th>Phone</th>
         <th>Text</th>
+          <th>Action</th>
       </tr>
     </thead>
     <tbody>
@@ -23,6 +24,7 @@
         <td>{{ticket['email']}}</td>
         <td>{{ticket['phone']}}</td>
         <td>{{ticket['text']}}</td>
+          <td><button class="delete-button"><a href="/employee/support_center/{{ticket['id']}}/delete">Delete</a></button></td>
       </tr>
     </tbody>
   </table>

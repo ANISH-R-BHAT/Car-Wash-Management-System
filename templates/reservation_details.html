@@ -22,6 +22,7 @@
         <th>Service</th>
         <th>Date</th>
         <th>Time</th>
+        <th>Action</th>
       </tr>
     </thead>
     <tbody>
@@ -38,6 +39,7 @@
         <td>{{customer['service']}}</td>
         <td>{{customer['date']}}</td>
         <td>{{customer['time']}}</td>
+        <td><button class="delete-button"><a href="/employee/reservations/{{customer['id']}}/delete">Delete</a></button></td>
       </tr>
     </tbody>
   </table>
